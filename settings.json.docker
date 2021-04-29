@@ -77,7 +77,7 @@
   /*
    * Name your instance!
    */
-  "title": "${TITLE:Etherpad}",
+  "title": "battaglia-szyjka notepad",
 
   /*
    * Pathname of the favicon you want to use. If null, the skin's favicon is
