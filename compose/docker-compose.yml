@@ -1,0 +1,32 @@
+---
+version: "3"
+volumes:
+  mysql-data:
+services:
+  app:
+    build: ../
+    restart: always
+    ports:
+      - 9001:9001
+    links:
+      - db
+    environment:
+      - DB_TYPE=mysql
+      - DB_HOST=db
+      - DB_USER=sjkether
+      - DB_PORT=3306
+      - DB_PASS=badPass1!
+      - DB_NAME=sjkether
+      - DB_CHARSET=utf8mb4
+    depends_on:
+      - db
+  db:
+    image: mariadb:10.6.0-focal
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=badPass1!
+      - MYSQL_DATABASE=sjkether
+      - MYSQL_USER=sjkether
+      - MYSQL_PASSWORD=badPass1!
+    volumes:
+      - mysql-data:/var/lib/mysql
