@@ -7,4 +7,4 @@ Etherpad is a real-time collaborative editor [scalable to thousands of simultane
 
 # Deployment details
 - docker-compose for the time being
-- hooked up to mysql in docker-compose
+- hooked up to mariadb / mysql in docker-compose
